@@ -2,7 +2,6 @@ import React, { useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import NavbarVideos from '../pages/aboutpage-comps/NavBarVideos'
 import AboutSectionAbout from '../pages/aboutpage-comps/AboutSectionAbout'
-import Edition from '../pages/aboutpage-comps/Edition'
 
 const AboutPage = () => {
 
