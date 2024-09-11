@@ -821,9 +821,9 @@ function HomePage() {
                 loop={true}
                 cursor
                 cursorStyle="|"
-                typeSpeed={70}
-                deleteSpeed={100}
-                delaySpeed={500}
+                typeSpeed={40}
+                deleteSpeed={50}
+                delaySpeed={400}
                 className="custom-typewriter"
               />
             </span>
