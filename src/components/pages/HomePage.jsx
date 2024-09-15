@@ -698,7 +698,188 @@
 // export default HomePage;
 
 
-import React, { useState, useRef, useEffect } from 'react';
+// import React, { useState, useRef, useEffect } from 'react';
+// import { Canvas } from '@react-three/fiber';
+// import { OrbitControls } from '@react-three/drei';
+// import ParticleNetwork from './3DComponents/ParticleNetwork';
+// import NeuralStructure from './3DComponents/NeuralStructure';
+// import BloomEffect from './3DComponents/BloomEffect';
+// import ParticlesBackground from '../ParticlesBackground';
+// import About from './homepage-comps/About';
+// import Education from './homepage-comps/Education';
+// import Experience from './homepage-comps/Experience';
+// import MyProjects from './homepage-comps/MyProjects';
+// import Techs from './homepage-comps/Techs';
+// import Contact from './homepage-comps/Contact';
+// import GeneralFooter from '../GeneralFooter';
+// import { Typewriter } from 'react-simple-typewriter';
+
+// function HomePage() {
+//   const [expanded, setExpanded] = useState(false);
+//   const [showNodes, setShowNodes] = useState(false);
+//   const [showDetails, setShowDetails] = useState(false);
+//   const [showNeuralStructure, setShowNeuralStructure] = useState(false);
+//   const [showTypewriter, setShowTypewriter] = useState(true);
+//   const [isContactPage, setIsContactPage] = useState(false);
+
+//   // Refs for sections
+//   const aboutRef = useRef(null);
+//   const educationRef = useRef(null);
+//   const experienceRef = useRef(null);
+//   const projectsRef = useRef(null);
+//   const techsRef = useRef(null);
+//   const contactRef = useRef(null);
+
+//   // Function to scroll to section
+//   const scrollToSection = (ref) => {
+//     ref.current.scrollIntoView({ behavior: 'smooth', block: 'start' });
+//   };
+
+//   // Monitor if we are on the "Contact" section based on scroll position
+//   const handleScroll = () => {
+//     if (contactRef.current) {
+//       const contactSectionTop = contactRef.current.getBoundingClientRect().top;
+//       const viewportHeight = window.innerHeight;
+
+//       if (contactSectionTop <= viewportHeight) {
+//         setIsContactPage(true); // Show footer when in view
+//       } else {
+//         setIsContactPage(false);
+//       }
+//     }
+//   };
+
+//   // Listen for scrolling
+//   useEffect(() => {
+//     window.addEventListener('scroll', handleScroll);
+//     return () => {
+//       window.removeEventListener('scroll', handleScroll);
+//     };
+//   }, []);
+
+//   // Expand function for the neural network section
+//   const handleClick = () => {
+//     if (!expanded) {
+//       setExpanded(true);
+//       setShowNodes(true);
+//       setTimeout(() => setShowTypewriter(true), 1000);
+//     } else if (!showNeuralStructure) {
+//       setShowDetails(true);
+//       setShowNeuralStructure(true);
+//       setShowTypewriter(false);
+//     }
+//   };
+
+//   return (
+//     <div className="fullpage-wrapper">
+//       <section className="fullpage-section">
+//         <div className="particles-background">
+//           <ParticlesBackground />
+//         </div>
+
+//         <div className="canvas-content">
+//           <Canvas
+//             style={{ background: 'transparent', width: '100vw', height: '100vh' }}
+//             camera={{ position: [0, 0, 100], fov: 60 }}
+//             onClick={handleClick}
+//           >
+//             <ParticleNetwork
+//               expanded={expanded}
+//               showNodes={showNodes}
+//               showDetails={showDetails}
+//               showNeuralStructure={showNeuralStructure}
+//             />
+//             {showNeuralStructure && <NeuralStructure />}
+//             <BloomEffect />
+//             <OrbitControls enableZoom={false} enablePan={false} enableRotate={false} />
+//           </Canvas>
+//         </div>
+
+//         {!expanded && (
+//           <div className="absolute bottom-5 left-1/2 transform -translate-x-1/2">
+//             <span className="custom-typewriter1">
+//               <Typewriter
+//                 words={['Click to Explore']}
+//                 loop={false}
+//                 cursor
+//                 cursorStyle="|"
+//                 typeSpeed={70}
+//                 deleteSpeed={100}
+//                 delaySpeed={500}
+//                 className="custom-typewriter"
+//               />
+//             </span>
+//           </div>
+//         )}
+
+//         {expanded && showTypewriter && (
+//           <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 translate-y-16">
+//             <span className="custom-typewriter">
+//               I am a&nbsp;
+//               <Typewriter
+//                 words={['Data Scientist', 'Developer', 'Tech Enthusiast']}
+//                 loop={true}
+//                 cursor
+//                 cursorStyle="|"
+//                 typeSpeed={70}
+//                 deleteSpeed={100}
+//                 delaySpeed={500}
+//                 className="custom-typewriter"
+//               />
+//             </span>
+//           </div>
+//         )}
+
+//         {showNeuralStructure && (
+//           <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 text-center">
+//             <span className="custom-typewriter1">
+//               <Typewriter
+//                 words={['Tap the nodes. It\'s fun!']}
+//                 loop={false}
+//                 cursor
+//                 cursorStyle="|"
+//                 typeSpeed={70}
+//                 deleteSpeed={100}
+//                 delaySpeed={500}
+//                 className="custom-typewriter"
+//               />
+//             </span>
+//           </div>
+//         )}
+//       </section>
+
+//       <section ref={aboutRef} name="About" className="fullpage-section">
+//         <About />
+//       </section>
+//       <section ref={educationRef} name="Education" className="fullpage-section">
+//         <Education />
+//       </section>
+//       <section ref={experienceRef} name="Experience" className="fullpage-section">
+//         <Experience />
+//       </section>
+//       <section ref={projectsRef} name="Projects" className="fullpage-section">
+//         <MyProjects />
+//       </section>
+
+//       <section ref={techsRef} name="Technologies" className="fullpage-section">
+//         <Techs />
+//       </section>
+
+//       {/* Render the footer ONLY on the "Contact" section */}
+//       <section ref={contactRef} name="Contact" className="fullpage-section">
+//         <div className="contact-container">
+//           <Contact />
+//         </div>
+//         <GeneralFooter /> {/* The footer is inside the Contact section */}
+//       </section>
+//     </div>
+//   );
+// }
+
+// export default HomePage;
+// HomePage.jsx
+
+import React, { useState, useRef, useEffect, Suspense } from 'react';
 import { Canvas } from '@react-three/fiber';
 import { OrbitControls } from '@react-three/drei';
 import ParticleNetwork from './3DComponents/ParticleNetwork';
@@ -742,7 +923,7 @@ function HomePage() {
       const viewportHeight = window.innerHeight;
 
       if (contactSectionTop <= viewportHeight) {
-        setIsContactPage(true); // Show footer when in view
+        setIsContactPage(true);
       } else {
         setIsContactPage(false);
       }
@@ -783,15 +964,17 @@ function HomePage() {
             camera={{ position: [0, 0, 100], fov: 60 }}
             onClick={handleClick}
           >
-            <ParticleNetwork
-              expanded={expanded}
-              showNodes={showNodes}
-              showDetails={showDetails}
-              showNeuralStructure={showNeuralStructure}
-            />
-            {showNeuralStructure && <NeuralStructure />}
-            <BloomEffect />
-            <OrbitControls enableZoom={false} enablePan={false} enableRotate={false} />
+            <Suspense fallback={null}>
+              <ParticleNetwork
+                expanded={expanded}
+                showNodes={showNodes}
+                showDetails={showDetails}
+                showNeuralStructure={showNeuralStructure}
+              />
+              {showNeuralStructure && <NeuralStructure />}
+              <BloomEffect />
+              <OrbitControls enableZoom={false} enablePan={false} enableRotate={false} />
+            </Suspense>
           </Canvas>
         </div>
 
@@ -821,9 +1004,9 @@ function HomePage() {
                 loop={true}
                 cursor
                 cursorStyle="|"
-                typeSpeed={40}
-                deleteSpeed={50}
-                delaySpeed={400}
+                typeSpeed={70}
+                deleteSpeed={100}
+                delaySpeed={500}
                 className="custom-typewriter"
               />
             </span>
@@ -834,7 +1017,7 @@ function HomePage() {
           <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 text-center">
             <span className="custom-typewriter1">
               <Typewriter
-                words={['Tap the nodes. It\'s fun!']}
+                words={["Tap the nodes. It's fun!"]}
                 loop={false}
                 cursor
                 cursorStyle="|"
