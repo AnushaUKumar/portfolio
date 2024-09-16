@@ -1,42 +1,42 @@
 const projects = [
   {
     id: 1,
-    title: "EasyShop",
-    description: "Ecommerce created with React JS and Tailwind CSS",
-    technologies: "Javascript, React, Redux, Tailwind CSS",
-    src: "/images/projectsImages/easyshop.webp",
-    demo: "https://easyshop-bydt.netlify.app/",
-    code: "https://github.com/diegotellezc/EasyShop",
+    title: "Championship Forecaster - F1",
+    description: "This project predicts Formula 1 driver positions by analyzing historical race data from 2015 to 2023.",
+    technologies: "Python, Pandas, Scikit-learn, XGBoost, and Matplotlib ",
+    src: "/images/projectsImages/F1.webp",
+    
+    code: "https://github.com/AnushaUKumar/Championship-Forecaster-F1",
   },
   {
     id: 2,
-    title: "Accio Vocabulary",
+    title: "Cinematic Pulse",
     description:
-      "Landing page of my youtube channel where I teach english with movies, series and songs.",
-    technologies: "Javascript, HTML5, Tailwind CSS",
-    src: "/images/projectsImages/acciovocabulary.webp",
-    demo: "https://diegotellezc.github.io/landing-accio-vocabulary/",
-    code: "https://github.com/diegotellezc/landing-accio-vocabulary",
+      "This project creates a normalized database from a TSV file of movie and show data, linking genres and IMDb scores. It uses machine learning models to predict IMDb ratings based on features like genre, runtime, and age certification.",
+    technologies: " SQLite, Python (Pandas, SQLAlchemy, Scikit-learn), and data visualization with Matplotlib and Seaborn.",
+    src: "/images/projectsImages/cinematic_pulse.webp",
+    
+    code: "https://github.com/AnushaUKumar/cinematic_pulse",
   },
   {
     id: 3,
-    title: "Dogs Blog",
+    title: "House_analysis",
     description:
-      "DogsBlog is a page for dog lovers where you can find some articles with relevant information about the care of these beautiful animals.",
-    technologies: "Javascript, HTML5, CSS3",
-    src: "/images/projectsImages/dogsblog.webp",
-    demo: "https://dogs-blog-diegotellezdev.netlify.app/",
-    code: "https://github.com/diegotellezc/dogsBlog",
+      "This project involves creating interactive dashboards for visualizing sales data, customer demographics, and performance trends using Tableau.",
+    technologies: "Tableau for data visualization and analysis, with data sourced from Excel or SQL databases.",
+    src: "/images/projectsImages/House_dashboard.webp",
+    
+    code: "https://github.com/AnushaUKumar/Tableau_dashboard",
   },
   {
     id: 4,
-    title: "Academlo Shop",
+    title: "Track Fit IQ",
     description:
-      "Academlo Shop is an E-Commerce developed with Vanilla Javascript. I created a slider with banner ads and you can toggle between dark and light mode.",
+      " is a comprehensive database system designed to track and manage personal health metrics like diet, exercise, sleep, and weight. It integrates personalized health goals and real-time data analysis to enhance user wellness management.",
     technologies: "Javascript, HTML5, CSS3",
-    src: "/images/projectsImages/academloshop.webp",
-    demo: "https://academlostoregen24.netlify.app/",
-    code: "https://github.com/diegotellezc/academloShop",
+    src: "/images/projectsImages/fitness.webp",
+ 
+    code: "https://github.com/AnushaUKumar",
   },
   {
     id: 5,
@@ -45,8 +45,8 @@ const projects = [
       "An application to know the weather in your current location in degrees Celsius or degrees Fahrenheit. You can also search for the weather in other cities around the world.",
     technologies: "Javascript, React, Tailwind CSS",
     src: "/images/projectsImages/weatherapp.webp",
-    demo: "https://weatherappbydt.netlify.app/",
-    code: "https://github.com/diegotellezc/weather-app",
+    
+    code: "https://github.com/AnushaUKumar",
   },
   {
     id: 6,
@@ -55,8 +55,8 @@ const projects = [
       "Find Rick and Morty's characters by dimension on this funny app.",
     technologies: "Javascript, React, Tailwind CSS",
     src: "/images/projectsImages/rickandmorty.webp",
-    demo: "https://rickandmorty-bydt.netlify.app/",
-    code: "https://github.com/diegotellezc/RickAndMortyApp",
+   
+    code: "https://github.com/AnushaUKumar",
   },
 ];
 

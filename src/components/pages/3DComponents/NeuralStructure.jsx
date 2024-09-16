@@ -1557,7 +1557,7 @@ function NeuralStructure() {
   });
 
   return (
-    <group ref={groupRef} position={[-30, 0, 0]} scale={[1.2, 1.2, 1.2]}>
+    <group ref={groupRef} position={[-25, 0, 0]} scale={[1.3, 1.2, 1.2]}>
       {/* Lighting Setup */}
       <ambientLight intensity={5} />
       <directionalLight

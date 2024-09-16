@@ -176,7 +176,7 @@ body::-webkit-scrollbar {
 
 /* Add this CSS to your styles */
 .education-box {
-  background-color: #2d3136; /* Background color of the box */
+  background: linear-gradient(10deg, #1b1b1b, #676565, #797373, #343535); /* Background color of the box */
   padding: 20px;
   border-radius: 10px; /* Slight rounding of the edges */
   margin-bottom: 20px; /* Space between boxes */
@@ -203,22 +203,81 @@ body::-webkit-scrollbar {
   position: absolute;
   left: -8px;
 }
-
 .education-title {
-  font-size: 3em;
-  font-family: 'Saira Stencil One', sans-serif;
-  font-weight: 10000; /* Increase font weight for sharpness */
-  background: linear-gradient(10deg, #303131, #757474, #e1dcdc, #dbdedf); /* Metallic gradient */
+  font-size: 3.5rem; /* Adjust font size */
+  font-family: 'Saira Stencil One', sans-serif; /* Matching the font to other sections */
+  font-weight: 10000;
+  background: linear-gradient(10deg, #303131, #757474, #e1dcdc, #dbdedf); /* Gradient matching */
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  text-shadow: none; /* Remove text shadow for a sharper look */
+  text-shadow: none;
   text-align: center;
-  -webkit-font-smoothing: antialiased; /* Ensure smooth font rendering */
+  margin-bottom: 40px; /* Add space below the title */
+  -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-.education-box h2, .education-box p, .education-box span {
-  color: #a6adb0; /* Replace this with any of the colors mentioned above */
+.education-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  width: 100%; 
+  padding: 0 5px; /* Reduce padding between the cards */
+  gap: 20px; /* Control the gap between cards */
+}
+
+.education-box {
+  background: linear-gradient(10deg, #1b1b1b, #676565, #797373, #343535);
+  border-radius: 8px;
+  padding: 20px;
+  width: 45%; /* Reduce the width to fit more neatly */
+  min-height: 300px;
+  max-height: 300px;
+  overflow: hidden;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.education-box.popped-out {
+  transform: scale(1.03);
+  z-index: 1;
+  box-shadow: 0 0 30px rgba(61, 233, 227, 0.7), 0 0 40px rgba(0, 255, 255, 0.7);
+  max-height: 500px;
+  width: 42%; 
+  overflow-y: scroll; /* Enable vertical scrolling when expanded */
+  overflow-x: hidden;
+  ::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* Hide scrollbar for Firefox */
+  scrollbar-width: none;
+  
+  /* Smooth scrolling */
+  scroll-behavior: smooth;
+}
+
+.education-content {
+  text-align: left;
+  flex-grow: 1;
+}
+
+.timeline-logo-horizontal {
+  width: 50px;
+  height: 50px;
+  margin-bottom: 10px;
+}
+
+.school-logo {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  border-radius: 50%;
 }
 
 .experience-container {
@@ -230,11 +289,11 @@ body::-webkit-scrollbar {
 }
 
 .experience-box {
-  background-color: #343437;
+  background: linear-gradient(10deg, #1b1b1b, #676565, #797373, #343535);
   border-radius: 8px;
   padding: 20px;
   width: 30%; /* Ensure same width for non-expanded boxes */
-  min-height: 200px; /* Set a minimum height */
+  min-height: 300px; /* Set a minimum height */
   max-height: 300px; /* Limit the height for non-expanded boxes */
   overflow: hidden;
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
@@ -250,16 +309,26 @@ body::-webkit-scrollbar {
 .experience-box.popped-out {
   transform: perspective(500px) rotateY(5deg) scale(1.05); /* Pop out and scale */
   z-index: 1; /* Ensure the active box appears above others */
-  box-shadow: 0 0 30px rgba(41, 94, 94, 0.8), 0 0 40px rgba(0, 255, 255, 0.7);
+  box-shadow: 0 0 30px rgba(61, 233, 227, 0.7), 0 0 40px rgba(0, 255, 255, 0.7);
   width: 35%; /* Slightly increase width for the expanded box */
   max-height: 500px; /* Increase height for expanded boxes */
-  overflow-y: auto; /* Enable vertical scrolling when expanded */
+  overflow-y: scroll; /* Enable vertical scrolling when expanded */
   overflow-x: hidden;
+  ::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* Hide scrollbar for Firefox */
+  scrollbar-width: none;
+  
+  /* Smooth scrolling */
+  scroll-behavior: smooth;
 }
 
 .experience-content {
   text-align: left;
   flex-grow: 1;
+  
 }
 
 .timeline-logo-horizontal {
@@ -317,7 +386,7 @@ footer {
   left: 0;
   bottom: 0;
   width: 100%; /* Ensures the footer spans the full width */
-  background-color: black;
+  background-color: none;
   padding: 20px 0;
   display: flex;
   justify-content: center;
@@ -326,13 +395,13 @@ footer {
 }
 
 footer p {
-  color: white;
+  color:#fff;
   text-align: center;
   margin: 0;
 }
 
 footer a {
-  color: white;
+  color: #fff;
   text-decoration: none;
 }
 
@@ -354,6 +423,69 @@ footer .icon {
   -moz-osx-font-smoothing: grayscale;
 }
 
+/* Button Style */
+button {
+  font-family: 'Saira Stencil One', sans-serif;
+  font-size: 1.2em;
+  font-weight: 10000;
+  background: linear-gradient(10deg, #303131, #757474, #e1dcdc, #dbdedf);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: none;
+  text-align: center;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  border: 2px solid #757474;
+  padding: 15px 30px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
 
-  
-  
+button:hover {
+  background: linear-gradient(10deg, #dbdedf, #e1dcdc, #757474, #303131);
+  border-color: #8b8f90;
+  transform: scale(1.05);
+}
+
+/* Contact Heading Style */
+h2.contact-heading {
+  font-family: 'Saira Stencil One', sans-serif;
+  font-size: 3em;
+  font-weight: 10000;
+  background: linear-gradient(10deg, #303131, #757474, #e1dcdc, #dbdedf);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: none;
+  text-align: center;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.form-container {
+  margin-top: -100px; /* Adjust this value to move the form up */
+  /* Add any additional styles you need here */
+}
+
+
+/* Add this to your CSS file or Tailwind config */
+.project-card {
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+.project-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 10px 15px rgba(56, 131, 141, 0.3);
+}
+
+.project-card img {
+  border-radius: 10px;
+  transition: transform 0.2s ease-in-out;
+}
+
+.project-card img:hover {
+  transform: scale(1.05);
+}
+
+
+

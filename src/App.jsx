@@ -189,29 +189,123 @@
 // }
 
 // export default App;
+// import React, { useState } from 'react';
+// import { Route, Routes, useLocation } from 'react-router-dom';
+// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+// import { faStar } from '@fortawesome/free-solid-svg-icons';
+// import AboutPage from './components/pages/AboutPage';
+// import HomePage from './components/pages/HomePage';
+// import GeneralFooter from "./components/GeneralFooter";
+// import MobileSocialLinks from './components/pages/homepage-comps/MobileSocialLinks';
+// import AllProjectsPage from './components/pages/AllProjectsPage';
+// import AllTechsPage from './components/pages/AllTechsPage';
+// import ParticlesBackground from './components/ParticlesBackground';
+// import About from './components/pages/homepage-comps/About.jsx';
+// import SocialLinks from './components/SocialLinks.jsx';
+
+// function App() {
+//   const [showParticles, setShowParticles] = useState(true);
+//   const location = useLocation();
+
+//   return (
+//     <div className="fixed flex flex-col min-h-screen">
+      
+//       {/* SocialLinks placed here to ensure it shows on all pages */}
+//       <SocialLinks/>
+
+//       {/* Button to toggle particle background */}
+//       <button 
+//         onClick={() => setShowParticles(!showParticles)} 
+//         className="fixed top-5 right-5 p-2 text-white rounded-full z-50"
+//         style={{ background: 'transparent', border: '0.2px solid white', color: 'gray' }}  
+//       >
+//         <FontAwesomeIcon icon={faStar} />
+//       </button>
+
+//       {/* Particle background */}
+//       {showParticles && <ParticlesBackground />}
+
+//       {/* Main content */}
+//       <div className="flex-grow page-scrollable">
+//         <Routes>
+//           <Route path="/" element={<HomePage />} />
+//           <Route path="/About Me" element={<About />} />
+//           <Route path="/projects" element={<AllProjectsPage />} />
+//           <Route path="/technologies" element={<AllTechsPage />} />
+//         </Routes>
+//       </div>
+//     </div>
+//   );
+// }
+
+// export default App;
+// App.jsx
+
+// import React, { useState } from 'react';
+// import { Route, Routes, useLocation } from 'react-router-dom';
+// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+// import { faStar } from '@fortawesome/free-solid-svg-icons';
+// import HomePage from './components/pages/HomePage';
+// import AllProjectsPage from './components/pages/AllProjectsPage';
+// import AllTechsPage from './components/pages/AllTechsPage';
+// import ParticlesBackground from './components/ParticlesBackground';
+// import About from './components/pages/homepage-comps/About';
+// import SocialLinks from './components/SocialLinks';
+
+// function App() {
+//   const [showParticles, setShowParticles] = useState(true);
+
+//   return (
+//     <div className="flex flex-col min-h-screen">
+//       {/* SocialLinks placed here to ensure it shows on all pages */}
+//       <SocialLinks />
+
+//       {/* Button to toggle particle background */}
+//       <button
+//         onClick={() => setShowParticles(!showParticles)}
+//         className="fixed top-5 right-5 p-2 text-white rounded-full z-50"
+//         style={{ background: 'transparent', border: '0.2px solid white', color: 'gray' }}
+//       >
+//         <FontAwesomeIcon icon={faStar} />
+//       </button>
+
+//       {/* Particle background */}
+//       {showParticles && <ParticlesBackground />}
+
+//       {/* Main content */}
+//       <div className="flex-grow">
+//         <Routes>
+//           <Route path="/" element={<HomePage />} />
+//           <Route path="/about-me" element={<About />} />
+//           <Route path="/projects" element={<AllProjectsPage />} />
+//           <Route path="/technologies" element={<AllTechsPage />} />
+//         </Routes>
+//       </div>
+//     </div>
+//   );
+// }
+
+// export default App;
+
 import React, { useState } from 'react';
 import { Route, Routes, useLocation } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faStar } from '@fortawesome/free-solid-svg-icons';
-import AboutPage from './components/pages/AboutPage';
 import HomePage from './components/pages/HomePage';
-import GeneralFooter from "./components/GeneralFooter";
-import MobileSocialLinks from './components/pages/homepage-comps/MobileSocialLinks';
 import AllProjectsPage from './components/pages/AllProjectsPage';
 import AllTechsPage from './components/pages/AllTechsPage';
 import ParticlesBackground from './components/ParticlesBackground';
-import About from './components/pages/homepage-comps/About.jsx';
-import SocialLinks from './components/SocialLinks.jsx';
-
+import About from './components/pages/homepage-comps/About';
+import SocialLinks from './components/SocialLinks';
+import Contact from './components/pages/homepage-comps/Contact';
+import GeneralFooter from "./components/GeneralFooter";
 function App() {
   const [showParticles, setShowParticles] = useState(true);
   const location = useLocation();
-
   return (
-    <div className="fixed flex flex-col min-h-screen">
+    <div className="flex flex-col min-h-screen">
+      <SocialLinks />
       
-      {/* SocialLinks placed here to ensure it shows on all pages */}
-      <SocialLinks/>
 
       {/* Button to toggle particle background */}
       <button 
@@ -224,14 +318,14 @@ function App() {
 
       {/* Particle background */}
       {showParticles && <ParticlesBackground />}
-
       {/* Main content */}
-      <div className="flex-grow page-scrollable">
+      <div className="flex-grow">
         <Routes>
           <Route path="/" element={<HomePage />} />
-          <Route path="/About Me" element={<About />} />
+          <Route path="/about-me" element={<About />} />
           <Route path="/projects" element={<AllProjectsPage />} />
           <Route path="/technologies" element={<AllTechsPage />} />
+          <Route path="/contact" element={<Contact/>} /> {/* Footer will appear here */}
         </Routes>
       </div>
     </div>
@@ -239,3 +333,4 @@ function App() {
 }
 
 export default App;
+

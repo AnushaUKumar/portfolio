@@ -21,33 +21,33 @@ const AllProjects = () => {
         {
             id: 1,
             src: easyshop,
-            code: 'https://github.com/diegotellezc/EasyShop'
+            code: 'https://github.com/AnushaUKumar/Tableau_dashboard'
         },
         {
             id: 2,
             src: acciovocabulary,
-            code: 'https://github.com/diegotellezc/landing-accio-vocabulary'
+            code: 'https://github.com/AnushaUKumar/Cinematic_Pulse'
         },
         {
             id: 3,
             src: dogsblog,
-            code: 'https://github.com/diegotellezc/dogsBlog'
+            code: 'https://github.com/AnushaUKumar/Championship-Forecaster-F1'
         },
         {
             id: 4,
             src: academloshop,
-            code: 'https://github.com/diegotellezc/academloShop'
+            code: 'https://github.com/AnushaUKumar/Championship-Forecaster-F1'
         },
         {
             id: 5,
             src: weatherapp,
-            code: 'https://github.com/diegotellezc/weather-app'
+            code: 'https://github.com/AnushaUKumar/Championship-Forecaster-F1'
         },
         {
             
             id: 6,
             src: rickandmorty,
-            code: 'https://github.com/diegotellezc/RickAndMortyApp'
+            code: 'https://github.com/AnushaUKumar/Championship-Forecaster-F1'
         },
        
     ]
